@@ -1,0 +1,23 @@
+h2 {
+    font-family: fantasy;
+    text-shadow: darkred;
+    
+}
+
+body button{
+    background-color: rgb(68, 194, 68);
+    color: white;
+
+}
+
+#titulo{
+    background-color: rgb(47, 151, 151);
+}
+
+#meses{
+    color: saddlebrown;
+}
+
+#anos{
+    color: seagreen;
+}
