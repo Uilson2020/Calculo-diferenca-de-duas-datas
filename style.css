@@ -1,7 +1,5 @@
-h2 {
-    font-family: fantasy;
-    text-shadow: darkred;
-    
+body {
+    background: rgb(70 142, 236);
 }
 
 body button{
@@ -11,7 +9,8 @@ body button{
 }
 
 #titulo{
-    background-color: rgb(47, 151, 151);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(109, 116, 116);
 }
 
 #meses{
@@ -20,4 +19,8 @@ body button{
 
 #anos{
     color: seagreen;
+}
+
+#limpar{
+    background-color: red;
 }

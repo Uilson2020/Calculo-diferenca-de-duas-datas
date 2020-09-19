@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Verificador de datas</title>
+    <link href="estilo.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Verificador de datas</h1>
+    </header>
+    <section>
+        <div>
+            Escolha:
+            <input type="date" id="dtInicial">
+            <input type="date" id="dtFinal">
+            <input type="button" value="Consultar" id="consultar" onclick="adicionar()">
+            <input type="button" value="Limpar" id="limpar">
+            
+            <br><select name="lista" id="flista" size="6">
+                <output type="date" id="diferenca"></output>
+            </select>
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; Uilson Ribeiro - Raia Drogasil</p>
+    </footer>
+    <script src="calculadora.js"></script>
+</body>
+</html>

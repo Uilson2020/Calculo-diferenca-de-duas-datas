@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(70, 142, 236);
+    font: normal 15pt Arial;
+}
+
+header {
+    color: seashell;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 600px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+}
+
+select#lista {
+    width: 250px;
+}
+
+footer {
+    color: black;
+    text-align: center;
+    font-style: italic;
+}
+
+ #limpar{
+     background-color: rgb(247, 16, 16);
+     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+     border-radius: 4px;
+     color: white;
+     height: 30px;
+     width: 70px;
+ }
+
+ #consultar{
+     background-color: rgb(126, 238, 13);
+     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+     border-radius: 4px;
+     color: white;
+     height: 30px;
+ }
+ #dtInicial {
+     border-radius: 4px;
+     width: 170px;
+     height: 25px;
+ }
+
+ #dtFinal  {
+     border-radius: 4px;
+     width: 170px;
+     height: 25px;
+ }

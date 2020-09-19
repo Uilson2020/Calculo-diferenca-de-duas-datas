@@ -4,6 +4,15 @@ const consultar = document.getElementById('consultar')
 const limpar = document.getElementById('limpar')
 const diferenca = document.getElementById('diferenca')
 
+// function diferencaEntreDias(dataIni, dataFim){//recebe a data no formato MM/dd/yyyy
+//     var ONE_DAY = 1000 * 60 * 60 * 24;//Variável que representa um dia em milissegundos
+//     var date_ini_ms = new Date(dataIni).getTime();//variável que representa a data incial em ms
+//     var date_fim_ms = new Date(dataFim).getTime();//variável que representa a data final em ms
+//     var diferenca = date_fim_ms - date_ini_ms;//diferenca, em ms, entre as datas
+//     return Math.round(diferenca/ONE_DAY);//diferenca, em dias, entre as datas
+// }
+
+
 function calculateDateDiff () {
     let start = inputStart.value;
     let end = inputEnd.value;
@@ -28,18 +37,18 @@ function calculateDateDiff () {
         diffInDays = diffInDays - 30;
     }
 
-    retorno = "Anos: " + diffInYears + ". Meses: " + diffInMonths + ". Dias: " + diffInDays + ".";
+    retorno = "Total em anos: " + diffInYears + ". Total em meses: " + diffInMonths + ". Total em dias: " + diffInDays + ".";
 
     return retorno
 
 }
 
+
+
 consultar.addEventListener('click', () => {
     let retorno = calculateDateDiff();
 
     diferenca.innerHTML = retorno;
-
-
 })
 
 limpar.addEventListener('click', () => {
