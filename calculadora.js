@@ -1,84 +1,83 @@
-const inputStart = document.querySelector('#dtInicial')
-const inputEnd = document.querySelector('#dtFinal')
-const limpar = document.getElementById('limpar')
+const valorInicial = document.querySelector('#dtInicial')
+const valorFinal = document.querySelector('#dtFinal')
+const limparRetorno = document.getElementById('limpar')
 const consultar = document.getElementById('consultar')
 const diferenca = document.getElementById('diferenca')
+const res = document.querySelector('#res')
 
-let num = document.querySelector('input#fnum')
-let lista = document.querySelector('select#flista')
-let res = document.querySelector('div#res')
-let valores = []
+function eData() {
+    var retorno = true
 
-//função para gravar os valores numa lista
-function isNumero(dtInicial) {
-    if(Date(dtInicial) != "" ){
-        return true
-    } else {
-        return false
+    if(valorInicial.value == "" || valorFinal.value == ""){
+        retorno = false
+        window.alert("Valor de um campo ou mais está(ão) vazio(s), preencha os dois campos!")
+    } 
+
+    if(valorInicial.value != "" && valorInicial.value == valorFinal.value){
+        retorno = false
+        window.alert("Datas iguais, digite uma data diferente!")
     }
+
+    return retorno   
 }
 
-function inLista(dtInicial, l){
-    if (l.indexOf(Date(dtInicial)) != -1){
-        return true
-    } else {
-        return false
-    }
+function calculaDiferenca () {
+    if(eData() == true){
+        let verificarDataMenor = true
+        let dtInicial = valorInicial.value;
+        let dtFinal = valorFinal.value;
+
+        let ano = dtInicial.substring(0,4)
+        let ano1 = parseInt(ano,10);
+        let anoV = dtFinal.substring(0,4) 
+        let ano2 = parseInt(anoV,10)
+        let diferencaAnos = ano2 - ano1
+      
+        let mes = dtInicial.substring(5,7)
+        let mes1 = parseInt(mes,10)
+        let mesV = dtFinal.substring(5,7)
+        let mes2 = parseInt(mesV,10)
+        let diferencaMes = mes2 - mes1
+
+        let dia = dtInicial.substring(8,10)
+        let dia1 = parseInt(dia, 10)
+        let diaV = dtFinal.substring(8,10)
+        let dia2 = parseInt(diaV,10)
+        let diferencaDia = (dia2 - dia1)
+
+        if(diferencaAnos < 0 || (diferencaMes < 0 && diferencaAnos <= 0) || (diferencaDia < 0 && diferencaAnos <= 0 && diferencaMes <= 0) ){
+            window.alert("Data final deve ser maior que data inicial")
+            verificarDataMenor = false
+        } 
+
+
+        if(diferencaMes < 0 ){
+            diferencaAnos = diferencaAnos -1
+            diferencaMes = diferencaMes + 12
+        }
+ 
+        if(diferencaDia < 0){
+            diferencaMes = diferencaMes - 1
+            diferencaDia = diferencaDia + 30
+        }
+        
+        if(verificarDataMenor == false){
+            retorno = ""
+        } else {
+            retorno = res.innerHTML += `<p>Total em anos:   ${diferencaAnos} Total em meses:  ${diferencaMes} Total em dias: ${diferencaDia}.</p> `;
+        }
+    }  
 }
 
-function adicionar( ){
-    if(isNumero(num.value) && !inLista(num.value, valores)){
-        valores.push(Date(num.value))
-        let item = document.createElement('option')
-        lista.appendChild(item)
-    }else {
-        window.alert("Valor inválido!")
-    }
-    num.value = "";
-    num.focus();
-}
+limparRetorno.addEventListener('click', () => {
+    valorInicial.value = "";
+    valorFinal.value = "";
+    res.innerHTML = ""
 
-
-function calculateDateDiff () {
-    let dtInicial = inputStart.value;
-    let dtFinal = inputEnd.value;
-
-    dtInicial = new Date(dtInicial);
-    dtFinal = new Date(dtFinal);
-
-    let diffInTime = Math.abs(dtFinal - dtInicial);
-    let timeInOneDay = 1000 * 60 * 60 * 24
-    let diffInDays = Math.ceil(diffInTime / timeInOneDay);
-
-    let diffInMonths = 0;
-    let diffInYears = 0;
-
-    while(diffInDays >= 365) {
-        diffInYears = diffInYears + 1;
-        diffInDays = diffInDays - 365;
-    }
-
-    
-    while(diffInDays >= 30) {
-        diffInMonths = diffInMonths + 1;
-        diffInDays = diffInDays - 30;
-    }
-
-   
-    retorno = res.innerHTML += `<p>Total em anos:   ${diffInYears} Total em meses:  ${diffInMonths} Total em dias: ${diffInDays}.</p> `;
-    
-
-}
+})
 
 consultar.addEventListener('click', () => {
-    let retorno = calculateDateDiff();
-    num.focus();
-
+    let retorno = calculaDiferenca();
     diferenca.innerHTML = retorno;
 })
 
-limpar.addEventListener('click', () => {
-    inputStart.value = "";
-    inputEnd.value = "";
-    retorno.value = ""
-})

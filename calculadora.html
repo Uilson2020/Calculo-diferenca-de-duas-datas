@@ -8,27 +8,23 @@
     <link href="estilo.css" rel="stylesheet">
 </head>
 <body>
+    <h5 class="posicionado">(Esse tipo de data é do formato 30 dias/mês)</h5>
     <header>
         <h1>Verificador de datas</h1>
     </header>
     <section>
         <div>
-            Escolha:
+            Escolha duas datas:
             <input type="date" id="dtInicial">
             <input type="date" id="dtFinal">
-            <input type="button" value="Consultar" id="consultar" onclick="adicionar()">
+            <input type="button" value="Consultar" id="consultar">
             <input type="button" value="Limpar" id="limpar">
-            
-            <br><select name="lista" id="flista" size="6">
-                <output type="date" id="diferenca"></output>
-            </select>
         </div>
         <div id="res">
-
         </div>
     </section>
     <footer>
-        <p>&copy; Uilson Ribeiro - Raia Drogasil</p>
+        <p>&copy;Raia Drogasil - 2020</p>
     </footer>
     <script src="calculadora.js"></script>
 </body>

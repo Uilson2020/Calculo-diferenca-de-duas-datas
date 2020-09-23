@@ -1,28 +1,26 @@
 body {
-    background-color: rgb(70, 142, 236);
+    
+    background-color: #29754d;
     font: normal 15pt Arial;
 }
 
 header {
     color: seashell;
     text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 section {
-    background: white;
+    background-color: rgb(206, 206, 206);
     border-radius: 10px;
-    padding: 15px;
-    width: 600px;
+    padding: 25px;
+    width: 700px;
     margin: auto;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
 }
 
-select#lista {
-    width: 250px;
-}
-
 footer {
-    color: black;
+    color: white;
     text-align: center;
     font-style: italic;
 }
@@ -37,12 +35,13 @@ footer {
  }
 
  #consultar{
-     background-color: rgb(126, 238, 13);
+     background-color: rgb(38, 209, 75);
      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
      border-radius: 4px;
      color: white;
      height: 30px;
  }
+
  #dtInicial {
      border-radius: 4px;
      width: 170px;
@@ -54,3 +53,23 @@ footer {
      width: 170px;
      height: 25px;
  }
+
+ #res{
+     text-align: center;
+     
+ }
+
+ #consultar:hover {
+	opacity: 0.6;
+}
+
+#limpar:hover {
+    opacity: 0.6;
+}
+
+.posicionado {
+    right: 20px;
+    top: -20px;
+    position: absolute;
+    color: darkgoldenrod;
+}
